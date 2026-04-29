@@ -1,0 +1,23 @@
+{
+  "titulo": "De la búsqueda al suministro en tres pasos",
+  "pasos": [
+    {
+      "num": "01",
+      "nombre": "Busca",
+      "titulo": "Encuentra el productor adecuado",
+      "desc": "Filtra por variedad, certificación, capacidad de volumen, origen DOP/IGP y tipo de envase. Cada productor es verificado antes de aparecer en la plataforma."
+    },
+    {
+      "num": "02",
+      "nombre": "Solicita",
+      "titulo": "Envía una RFQ en 2 minutos",
+      "desc": "Indica volumen, destino, incoterm y plazo. Los productores responden directamente con una cotización personalizada en menos de 48 horas."
+    },
+    {
+      "num": "03",
+      "nombre": "Opera",
+      "titulo": "Cierra acuerdos con confianza",
+      "desc": "Gestiona la comunicación, documentación y pedidos recurrentes desde tu panel. Construye relaciones estables con proveedores de confianza."
+    }
+  ]
+}

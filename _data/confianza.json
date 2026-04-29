@@ -1,0 +1,8 @@
+{
+  "items": [
+    { "titulo": "Productores verificados",   "desc": "Revisión documental de cada almazara antes de publicar" },
+    { "titulo": "Certificaciones visibles",  "desc": "DOP, IGP, BIO EU, IFS, BRC, Kosher, Halal y más" },
+    { "titulo": "Respuesta en 48h",          "desc": "Tiempo de respuesta garantizado para todas las RFQ" },
+    { "titulo": "Exportación directa",       "desc": "Incoterms estándar · Documentación incluida · CIF disponible" }
+  ]
+}

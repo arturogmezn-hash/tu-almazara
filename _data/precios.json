@@ -1,0 +1,56 @@
+{
+  "titulo": "Precios simples y transparentes",
+  "planes": [
+    {
+      "nombre": "Básico",
+      "precio": "Gratis",
+      "precio_sufijo": "para siempre",
+      "descripcion": "Empieza a recibir consultas sin coste",
+      "destacado": false,
+      "badge": "",
+      "cta_texto": "Empezar gratis",
+      "features": [
+        { "texto": "1 producto publicado",        "incluido": true },
+        { "texto": "Perfil básico de empresa",     "incluido": true },
+        { "texto": "Contacto vía plataforma",      "incluido": true },
+        { "texto": "Recepción de RFQ",             "incluido": true },
+        { "texto": "Badge verificado",             "incluido": false },
+        { "texto": "Analíticas",                   "incluido": false }
+      ]
+    },
+    {
+      "nombre": "Profesional",
+      "precio": "€49",
+      "precio_sufijo": "/ mes",
+      "descripcion": "Para almazaras que apuestan por la exportación",
+      "destacado": true,
+      "badge": "Más popular",
+      "cta_texto": "Empezar prueba gratuita →",
+      "features": [
+        { "texto": "Hasta 20 productos publicados",   "incluido": true },
+        { "texto": "Badge verificado + puntuación",   "incluido": true },
+        { "texto": "Prioridad en búsquedas",          "incluido": true },
+        { "texto": "Panel de analíticas",             "incluido": true },
+        { "texto": "Mensajería directa",              "incluido": true },
+        { "texto": "Ficha técnica descargable",       "incluido": true }
+      ]
+    },
+    {
+      "nombre": "Empresa",
+      "precio": "A medida",
+      "precio_sufijo": "",
+      "descripcion": "Para cooperativas y grandes exportadores",
+      "destacado": false,
+      "badge": "",
+      "cta_texto": "Hablar con ventas",
+      "features": [
+        { "texto": "Productos ilimitados",             "incluido": true },
+        { "texto": "Posición destacada en homepage",   "incluido": true },
+        { "texto": "Acceso a API",                     "incluido": true },
+        { "texto": "Account manager dedicado",         "incluido": true },
+        { "texto": "Informes de mercado",              "incluido": true },
+        { "texto": "Multi-idioma (ES/EN/DE/FR)",       "incluido": true }
+      ]
+    }
+  ]
+}

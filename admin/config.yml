@@ -1,0 +1,166 @@
+backend:
+  name: github
+  repo: TU_USUARIO/tu-almazara        # <-- cambia esto por usuario/repositorio
+  branch: main
+  base_url: https://api.netlify.com    # OAuth gratuito via Netlify Identity
+  auth_endpoint: auth
+
+media_folder: "assets/img"
+public_folder: "/assets/img"
+
+locale: es
+
+collections:
+
+  # ── AJUSTES GLOBALES ─────────────────────────────────────
+  - name: "ajustes"
+    label: "Ajustes del sitio"
+    files:
+
+      - name: "general"
+        label: "General"
+        file: "_data/general.json"
+        fields:
+          - { label: "Nombre del sitio",        name: nombre_sitio,    widget: string,   default: "Tu Almazara" }
+          - { label: "Subtítulo (nav)",          name: subtitulo_nav,   widget: string,   default: "Marketplace B2B" }
+          - { label: "Teléfono de contacto",     name: telefono,        widget: string }
+          - { label: "Email de contacto",        name: email,           widget: string }
+          - { label: "Dirección (ciudad 1)",     name: ciudad1,         widget: string,   default: "Amsterdam, Países Bajos" }
+          - { label: "Dirección (ciudad 2)",     name: ciudad2,         widget: string,   default: "Toledo, España" }
+          - { label: "Enlace a tapastrading.com",name: enlace_footer,   widget: string }
+          - { label: "Meta descripción SEO",     name: meta_desc,       widget: text }
+
+      - name: "hero"
+        label: "Sección Hero (portada)"
+        file: "_data/hero.json"
+        fields:
+          - { label: "Badge superior",           name: badge,           widget: string,   default: "Marketplace B2B Internacional" }
+          - { label: "Título línea 1",            name: titulo1,         widget: string,   default: "Aceite de oliva español" }
+          - { label: "Título línea 2 (dorado)",  name: titulo2,         widget: string,   default: "directo de origen" }
+          - { label: "Descripción",              name: descripcion,     widget: text }
+          - { label: "Placeholder del buscador", name: placeholder,     widget: string }
+          - label: "Etiquetas de búsqueda rápida"
+            name: tags
+            widget: list
+            field: { label: "Etiqueta", name: tag, widget: string }
+
+      - name: "estadisticas"
+        label: "Estadísticas (barra de cifras)"
+        file: "_data/estadisticas.json"
+        fields:
+          - label: "Estadísticas"
+            name: items
+            widget: list
+            fields:
+              - { label: "Número",    name: numero,  widget: string }
+              - { label: "Etiqueta", name: etiqueta, widget: string }
+
+      - name: "como_funciona"
+        label: "Sección Cómo funciona"
+        file: "_data/como_funciona.json"
+        fields:
+          - { label: "Título de la sección",     name: titulo,   widget: string }
+          - label: "Pasos"
+            name: pasos
+            widget: list
+            fields:
+              - { label: "Número (ej. 01)",      name: num,      widget: string }
+              - { label: "Nombre del paso",      name: nombre,   widget: string }
+              - { label: "Título",               name: titulo,   widget: string }
+              - { label: "Descripción",          name: desc,     widget: text }
+
+      - name: "confianza"
+        label: "Señales de confianza"
+        file: "_data/confianza.json"
+        fields:
+          - label: "Items de confianza"
+            name: items
+            widget: list
+            fields:
+              - { label: "Título",       name: titulo, widget: string }
+              - { label: "Descripción", name: desc,   widget: string }
+
+      - name: "rfq"
+        label: "Formulario RFQ (cotización)"
+        file: "_data/rfq.json"
+        fields:
+          - { label: "Título",                   name: titulo,          widget: string }
+          - { label: "Descripción",              name: descripcion,     widget: text }
+          - { label: "Email destino (recibe RFQs)", name: email_destino, widget: string }
+          - { label: "Servicio de formulario",   name: form_action,     widget: string,   hint: "URL de Formspree, Web3Forms, etc. Ej: https://formspree.io/f/TUCODIGO" }
+          - label: "Puntos de valor (bullets)"
+            name: bullets
+            widget: list
+            field: { label: "Punto", name: bullet, widget: string }
+          - label: "Opciones de tipo de producto"
+            name: tipos_producto
+            widget: list
+            field: { label: "Opción", name: opcion, widget: string }
+          - label: "Opciones de volumen"
+            name: volumenes
+            widget: list
+            field: { label: "Opción", name: opcion, widget: string }
+          - { label: "Texto de nota legal",      name: nota_legal,      widget: string }
+          - { label: "Mensaje de éxito",         name: msg_exito,       widget: string }
+          - { label: "Descripción del éxito",    name: desc_exito,      widget: text }
+
+      - name: "precios"
+        label: "Sección Precios"
+        file: "_data/precios.json"
+        fields:
+          - { label: "Título de sección",        name: titulo,          widget: string }
+          - label: "Planes"
+            name: planes
+            widget: list
+            fields:
+              - { label: "Nombre del plan",      name: nombre,          widget: string }
+              - { label: "Precio",               name: precio,          widget: string,  hint: "Ej: Gratis, €49, A medida" }
+              - { label: "Sufijo del precio",    name: precio_sufijo,   widget: string,  hint: "Ej: para siempre, / mes" }
+              - { label: "Descripción breve",    name: descripcion,     widget: string }
+              - { label: "¿Es el plan destacado?", name: destacado,     widget: boolean, default: false }
+              - { label: "Badge (ej: Más popular)", name: badge,        widget: string,  required: false }
+              - { label: "Texto del botón",      name: cta_texto,       widget: string }
+              - label: "Características"
+                name: features
+                widget: list
+                fields:
+                  - { label: "Texto",            name: texto,           widget: string }
+                  - { label: "Incluido",         name: incluido,        widget: boolean, default: true }
+
+      - name: "cta_final"
+        label: "CTA final (antes del footer)"
+        file: "_data/cta_final.json"
+        fields:
+          - { label: "Título",                   name: titulo,          widget: string }
+          - { label: "Descripción",              name: descripcion,     widget: text }
+          - { label: "Texto botón principal",    name: btn_primario,    widget: string }
+          - { label: "Texto botón secundario",   name: btn_secundario,  widget: string }
+
+  # ── PRODUCTOS ────────────────────────────────────────────
+  - name: "productos"
+    label: "Productos del marketplace"
+    folder: "productos"
+    create: true
+    slug: "{{slug}}"
+    identifier_field: nombre
+    fields:
+      - { label: "Nombre del producto",          name: nombre,          widget: string }
+      - { label: "Origen / Región",              name: origen,          widget: string,   hint: "Ej: Jaén, España · Cosecha 2024" }
+      - label: "Tipo / Categoría"
+        name: categoria
+        widget: select
+        options:
+          - { label: "Virgen Extra",             value: "virgen-extra" }
+          - { label: "Ecológico",                value: "ecologico" }
+          - { label: "DOP / IGP",                value: "dop" }
+          - { label: "Granel 20T+",              value: "granel" }
+          - { label: "Marca blanca",             value: "marca-blanca" }
+      - { label: "Badge / Etiqueta",             name: badge,           widget: string,   hint: "Ej: Virgen Extra · DOP" }
+      - { label: "¿Badge ecológico (verde)?",    name: eco,             widget: boolean,  default: false }
+      - { label: "Imagen del producto",          name: imagen,          widget: image,    required: false }
+      - { label: "Volumen mínimo",               name: vol_min,         widget: string,   hint: "Ej: Mín. 1.000 L" }
+      - { label: "Formato de envío",             name: formato,         widget: string,   hint: "Ej: Granel / IBC" }
+      - { label: "Info adicional",               name: info_extra,      widget: string,   hint: "Ej: CIF disponible" }
+      - { label: "Descripción larga",            name: descripcion,     widget: text,     required: false }
+      - { label: "Destacado en homepage",        name: destacado,       widget: boolean,  default: true }
+      - { label: "Orden de aparición",           name: orden,           widget: number,   default: 1 }

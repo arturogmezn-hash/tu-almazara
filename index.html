@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title id="page-title">Tu Almazara — Marketplace B2B de Aceite de Oliva</title>
+  <meta name="description" id="page-desc" content="" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+
+  <!-- NAVEGACIÓN -->
+  <nav class="ta-nav">
+    <div class="ta-logo" id="nav-logo">Tu Almazara <span id="nav-sub">Marketplace B2B</span></div>
+    <div class="ta-nav-links">
+      <a href="#marketplace">Marketplace</a>
+      <a href="#como-funciona">Cómo funciona</a>
+      <a href="#rfq">Cotización</a>
+      <a href="#precios">Precios</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+    <div class="ta-nav-right">
+      <button class="btn-nav-outline">Iniciar sesión</button>
+      <button class="btn-nav-primary">Publica tu almazara</button>
+    </div>
+    <button class="ta-hamburger" id="hamburger" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="ta-mobile-menu" id="mobileMenu">
+    <a href="#marketplace">Marketplace</a>
+    <a href="#como-funciona">Cómo funciona</a>
+    <a href="#rfq">Cotización</a>
+    <a href="#precios">Precios</a>
+    <a href="#contacto">Contacto</a>
+    <a href="#" class="mobile-cta">Publica tu almazara</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="ta-hero">
+    <div class="ta-hero-inner">
+      <div class="ta-hero-badge" id="hero-badge"></div>
+      <h1 id="hero-title"></h1>
+      <p id="hero-desc"></p>
+      <div class="ta-search-bar">
+        <input type="text" id="hero-search" placeholder="" aria-label="Búsqueda" />
+        <select aria-label="Tipo de producto">
+          <option>Todos los tipos</option>
+          <option>Virgen Extra</option>
+          <option>Virgen</option>
+          <option>Ecológico</option>
+          <option>Granel</option>
+        </select>
+        <button type="button" onclick="document.getElementById('marketplace').scrollIntoView({behavior:'smooth'})">Buscar</button>
+      </div>
+      <div class="ta-hero-tags" id="hero-tags"></div>
+    </div>
+  </section>
+
+  <!-- ESTADÍSTICAS -->
+  <div class="ta-stats" id="stats-bar"></div>
+
+  <!-- PRODUCTOS -->
+  <section class="ta-section section-bg" id="marketplace">
+    <div class="ta-section-header">
+      <div>
+        <div class="ta-section-label">Productos destacados</div>
+        <div class="ta-section-title">Aceites listos para exportar</div>
+      </div>
+      <a class="ta-see-all" href="#">Ver todos →</a>
+    </div>
+    <div class="ta-filters">
+      <button class="ta-filter-btn active" data-filter="todos">Todos</button>
+      <button class="ta-filter-btn" data-filter="virgen-extra">Virgen Extra</button>
+      <button class="ta-filter-btn" data-filter="ecologico">Ecológico</button>
+      <button class="ta-filter-btn" data-filter="dop">DOP / IGP</button>
+      <button class="ta-filter-btn" data-filter="granel">Granel 20T+</button>
+      <button class="ta-filter-btn" data-filter="marca-blanca">Marca blanca</button>
+    </div>
+    <div class="ta-product-grid" id="product-grid"></div>
+  </section>
+
+  <!-- CÓMO FUNCIONA -->
+  <section class="ta-section ta-how-section" id="como-funciona">
+    <div class="ta-section-label">Proceso</div>
+    <div class="ta-section-title" id="how-title"></div>
+    <div class="ta-how-grid" id="how-grid"></div>
+  </section>
+
+  <!-- SEÑALES DE CONFIANZA -->
+  <section class="ta-trust-section">
+    <div class="ta-trust-inner" id="trust-grid"></div>
+  </section>
+
+  <!-- FORMULARIO RFQ -->
+  <section class="ta-rfq-section" id="rfq">
+    <div class="ta-rfq-grid">
+      <div class="ta-rfq-left">
+        <div class="ta-section-label" style="color:#7ab870;">Solicitud de cotización</div>
+        <h2 id="rfq-title"></h2>
+        <p id="rfq-desc"></p>
+        <div class="ta-rfq-bullets" id="rfq-bullets"></div>
+      </div>
+      <div class="ta-rfq-form-wrap">
+        <form class="ta-rfq-form" id="rfqForm">
+          <div class="ta-form-row">
+            <div class="ta-form-group">
+              <label for="rfq-empresa">Empresa *</label>
+              <input type="text" id="rfq-empresa" name="empresa" placeholder="Nombre de tu empresa" required />
+            </div>
+            <div class="ta-form-group">
+              <label for="rfq-pais">País de destino *</label>
+              <input type="text" id="rfq-pais" name="pais" placeholder="p.ej. Países Bajos, Alemania" required />
+            </div>
+          </div>
+          <div class="ta-form-row">
+            <div class="ta-form-group">
+              <label for="rfq-tipo">Tipo de producto *</label>
+              <select id="rfq-tipo" name="tipo_producto" required>
+                <option value="">Selecciona...</option>
+              </select>
+            </div>
+            <div class="ta-form-group">
+              <label for="rfq-volumen">Volumen estimado *</label>
+              <select id="rfq-volumen" name="volumen" required>
+                <option value="">Selecciona...</option>
+              </select>
+            </div>
+          </div>
+          <div class="ta-form-group">
+            <label for="rfq-incoterm">Incoterm preferido</label>
+            <select id="rfq-incoterm" name="incoterm">
+              <option value="">Sin preferencia</option>
+              <option>EXW</option><option>FOB</option><option>CIF</option><option>DAP</option>
+            </select>
+          </div>
+          <div class="ta-form-group">
+            <label for="rfq-email">Email de contacto *</label>
+            <input type="email" id="rfq-email" name="email" placeholder="tu@empresa.com" required />
+          </div>
+          <div class="ta-form-group">
+            <label for="rfq-notas">Requisitos adicionales</label>
+            <textarea id="rfq-notas" name="notas" placeholder="Certificaciones necesarias, tipo de envase, frecuencia de pedido..."></textarea>
+          </div>
+          <button type="submit" class="ta-rfq-submit">Enviar solicitud de cotización →</button>
+          <p class="ta-form-note" id="rfq-nota-legal"></p>
+        </form>
+        <div class="ta-rfq-success" id="rfqSuccess" style="display:none;">
+          <div class="ta-success-icon">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="18" stroke="#1d9e75" stroke-width="1.5"/><path d="M12 20l6 6 10-12" stroke="#1d9e75" stroke-width="2" stroke-linecap="round" fill="none"/></svg>
+          </div>
+          <div class="ta-success-title" id="rfq-msg-exito"></div>
+          <div class="ta-success-desc" id="rfq-desc-exito"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRECIOS -->
+  <section class="ta-section section-bg" id="precios">
+    <div class="ta-section-header">
+      <div>
+        <div class="ta-section-label">Para productores</div>
+        <div class="ta-section-title" id="precios-title"></div>
+      </div>
+    </div>
+    <div class="ta-pricing-grid" id="pricing-grid"></div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="ta-cta-section">
+    <div class="ta-section-label" style="color:#8a7c3a;margin-bottom:14px;">¿Listo para empezar?</div>
+    <h2 id="cta-titulo"></h2>
+    <p id="cta-desc"></p>
+    <div class="ta-cta-buttons">
+      <button class="btn-cta-primary" id="cta-btn1" onclick="document.getElementById('rfq').scrollIntoView({behavior:'smooth'})"></button>
+      <button class="btn-cta-outline" id="cta-btn2" onclick="document.getElementById('marketplace').scrollIntoView({behavior:'smooth'})"></button>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="ta-footer" id="contacto">
+    <div class="ta-footer-top">
+      <div class="ta-footer-brand">
+        <div class="ta-footer-logo" id="footer-logo"></div>
+        <p>El marketplace B2B de referencia para el aceite de oliva español en el mercado internacional.</p>
+        <div class="ta-footer-contact">
+          <span id="footer-ciudad1"></span>
+          <span>&nbsp;·&nbsp;</span>
+          <span id="footer-ciudad2"></span>
+        </div>
+      </div>
+      <div class="ta-footer-links-group">
+        <div class="ta-footer-col">
+          <div class="ta-footer-col-title">Plataforma</div>
+          <a href="#marketplace">Marketplace</a>
+          <a href="#como-funciona">Cómo funciona</a>
+          <a href="#rfq">Solicitar cotización</a>
+          <a href="#precios">Precios</a>
+        </div>
+        <div class="ta-footer-col">
+          <div class="ta-footer-col-title">Empresa</div>
+          <a href="#">Sobre nosotros</a>
+          <a href="#">Blog</a>
+          <a href="#contacto">Contacto</a>
+          <a href="#">Privacidad</a>
+        </div>
+        <div class="ta-footer-col">
+          <div class="ta-footer-col-title">Idiomas</div>
+          <a href="#">Español</a>
+          <a href="#">English</a>
+          <a href="#">Deutsch</a>
+          <a href="#">Français</a>
+        </div>
+      </div>
+    </div>
+    <div class="ta-footer-bottom">
+      <span id="footer-copy"></span>
+      <span>Marketplace B2B de aceite de oliva español</span>
+    </div>
+  </footer>
+
+  <script src="assets/main.js"></script>
+</body>
+</html>
