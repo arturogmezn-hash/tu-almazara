@@ -1,9 +1,7 @@
 backend:
   name: github
-  repo: arturogmezn-hash/tu-almazara        # <-- cambia esto por usuario/repositorio
+  repo: arturogmezn-hash/tu-almazara
   branch: main
-  base_url: https://api.netlify.com    # OAuth gratuito via Netlify Identity
-  auth_endpoint: auth
 
 media_folder: "assets/img"
 public_folder: "/assets/img"
